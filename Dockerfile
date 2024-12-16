@@ -4,11 +4,11 @@ FROM registry.access.redhat.com/ubi8/nodejs-16
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier le fichier de dépendances
-COPY package*.json ./
-
 # Donner les permissions à tous les utilisateurs
 RUN chmod -R 777 /app
+
+# Copier le fichier de dépendances
+COPY package*.json ./
 
 # Installer les dépendances
 RUN npm install
